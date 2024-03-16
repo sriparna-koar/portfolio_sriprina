@@ -1,0 +1,110 @@
+/* styles/AboutSection.module.css */
+.aboutSection {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 0; /* Adjusted margin-top */
+  
+  }
+  
+  .aboutContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .tabContentList {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .tabContentList li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #fff; /* Bright white color for the list items */
+    transition: transform 0.3s ease;
+  }
+  
+  .tabContentList li::before {
+    content: "•"; /* Custom bullet symbol */
+    position: absolute;
+    left: 0;
+    color: #ff69b4; /* Pinkish color */
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+  
+  .tabContentList li:hover {
+    transform: translateX(5px);
+  }
+  
+  .aboutTitle {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #ff69b4; /* Pinkish color for the title */
+    text-shadow: 1px 1px 2px rgba(255, 105, 180, 0.5); /* Adding slight text shadow */
+    animation: fadeInDown 0.5s ease-out; /* Animation to fade in the title */
+  }
+  
+  .aboutDescription {
+    font-size: 1.2rem;
+    color: #fff; /* Bright white color for the description */
+    max-width: 600px;
+    margin-bottom: 2rem;
+    opacity: 0; /* Initially hide the description */
+    animation: fadeInUp 0.5s ease-out forwards; /* Animation to fade in the description */
+  }
+  
+  .tabButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    opacity: 0; /* Initially hide the tab buttons */
+    animation: fadeInUp 0.5s ease-out 0.3s forwards; /* Animation to fade in the tab buttons */
+  }
+  
+  .tabButtons .tabButton {
+    font-size: 1.2rem;
+    color: #ff69b4; /* Pinkish color for the tab buttons */
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .tabButtons .tabButton:hover {
+    color: #ff1493; /* Lighter pinkish color on hover */
+  }
+  
+  .tabContentList {
+    list-style-type: disc;
+    padding-left: 2rem;
+    color: #ff69b4; /* Pinkish color for the list items */
+    opacity: 0; /* Initially hide the tab content */
+    animation: fadeInUp 0.5s ease-out 0.6s forwards; /* Animation to fade in the tab content */
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

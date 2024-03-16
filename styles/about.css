@@ -1,0 +1,33 @@
+/* about.module.css */
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  .about-image {
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-content {
+    text-align: left;
+  }
+  
+  .tab-button {
+    padding: 8px 16px;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+  }
+  
+  .tab-button:hover {
+    background-color: #6b46c1;
+    color: white;
+  }
+  
+  .tab-button.active {
+    background-color: #6b46c1;
+    color: white;
+  }
+  
