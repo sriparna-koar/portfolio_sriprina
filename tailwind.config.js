@@ -17,8 +17,8 @@ module.exports = {
  
         primary: colors.purple,
         secondary: colors.pink,
-        sky: colors.lightBlue, // Update `lightBlue` to `sky`
-        stone: colors.warmGray, // Update `warmGray` to `stone`
+        sky: colors.sky, // Update `lightBlue` to `sky`
+        stone: colors.stone, // Update `warmGray` to `stone`
         neutral: colors.trueGray, // Update `trueGray` to `neutral`
         gray: colors.coolGray, // Update `coolGray` to `gray`
         slate: colors.blueGray, // Update `blueGray` to `slate`

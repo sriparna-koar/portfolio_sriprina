@@ -36,7 +36,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className={`${styles.heroSubTitle} ${styles.textGray}`}>
-            I enjoy building sites & apps. Let's create something extraordinary.I am self-driven, quick starter 
+            I enjoy building sites & apps. Let&apos;s create something extraordinary. I am self-driven, quick starter 
           </p>
           <div>
             <Link href="/contact" className={`${styles.linkButton} ${styles.linkButtonPrimary} mr-4`}>
@@ -49,18 +49,16 @@ const HeroSection = () => {
             </Link>
           </div>
           <div className="socialMediaIcons">
-  <a href="https://www.linkedin.com" className="socialMediaIcon linkedin">
-    <FaLinkedin size={32} color="#0e76a8" />
-  </a>
-  <a href="https://www.github.com" className="socialMediaIcon github">
-    <FaGithub size={32} color="#333" />
-  </a>
-  <a href="https://www.twitter.com" className="socialMediaIcon twitter">
-    <FaTwitter size={32} color="#1da1f2" />
-  </a>
-</div>
-
-
+            <a href="https://www.linkedin.com" className="socialMediaIcon linkedin">
+              <FaLinkedin size={32} color="#0e76a8" />
+            </a>
+            <a href="https://www.github.com" className="socialMediaIcon github">
+              <FaGithub size={32} color="#333" />
+            </a>
+            <a href="https://www.twitter.com" className="socialMediaIcon twitter">
+              <FaTwitter size={32} color="#1da1f2" />
+            </a>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
