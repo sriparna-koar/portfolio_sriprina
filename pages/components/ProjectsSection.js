@@ -11,16 +11,16 @@ const projectsData = [
     description: "Project 1 description",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    githubUrl: "https://github.com/yourusername/project1",
     previewUrl: "/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
+    title: "Photography Portfolio Website",
     description: "Project 2 description",
     image: "/images/projects/2.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    githubUrl: "https://github.com/yourusername/project2",
     previewUrl: "/",
   },
   {
@@ -29,7 +29,7 @@ const projectsData = [
     description: "Project 3 description",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    githubUrl: "https://github.com/yourusername/project3",
     previewUrl: "/",
   },
   {
@@ -38,7 +38,7 @@ const projectsData = [
     description: "Project 4 description",
     image: "/images/projects/4.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
+    githubUrl: "https://github.com/yourusername/project4",
     previewUrl: "/",
   },
   {
@@ -47,7 +47,7 @@ const projectsData = [
     description: "Authentication and CRUD operations",
     image: "/images/projects/5.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    githubUrl: "https://github.com/yourusername/project5",
     previewUrl: "/",
   },
   {
@@ -56,7 +56,7 @@ const projectsData = [
     description: "Project 5 description",
     image: "/images/projects/6.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    githubUrl: "https://github.com/yourusername/project6",
     previewUrl: "/",
   },
 ];
@@ -115,7 +115,7 @@ const ProjectsSection = () => {
               title={project.title}
               description={project.description}
               imgUrl={project.image}
-              gitUrl={project.gitUrl}
+              githubUrl={project.githubUrl}
               previewUrl={project.previewUrl}
             />
           </motion.li>

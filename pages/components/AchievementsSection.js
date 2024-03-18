@@ -1,236 +1,164 @@
-// "use client";
-// import React from "react";
-// import dynamic from "next/dynamic";
 
-// const AnimatedNumbers = dynamic(
-//   () => {
-//     return import("react-animated-numbers");
-//   },
-//   { ssr: false }
-// );
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import styles from "../styles/Achivementsection.module.css";
 
-// const projectList = [
-//   {
-//     name: "Project 1",
-//     metric: "Projects",
-//     value: "100",
-//     postfix: "+",
-//     url: "https://example.com/project1",
-//     image: "project1.jpg",
-//     pr: "https://github.com/example/project1/pulls",
-//   },
-//   {
-//     name: "Project 2",
-//     prefix: "~",
-//     metric: "Users",
-//     value: "100,000",
-//     url: "https://example.com/project2",
-//     image: "project2.jpg",
-//     pr: "https://github.com/example/project2/pulls",
-//   },
-//   {
-//     name: "Project 3",
-//     metric: "Awards",
-//     value: "7",
-//     url: "https://example.com/project3",
-//     image: "project3.jpg",
-//     pr: "https://github.com/example/project3/pulls",
-//   },
-//   {
-//     name: "Project 4",
-//     metric: "Years",
-//     value: "5",
-//     url: "https://example.com/project4",
-//     image: "project4.jpg",
-//     pr: "https://github.com/example/project4/pulls",
-//   },
-// ];
-
-// const AchievementsSection = () => {
-//   return (
-//     <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-//       <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
-//         {projectList.map((project, index) => {
-//           return (
-//             <div
-//               key={index}
-//               className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
-//             >
-//               <h2 className="text-white text-4xl font-bold flex flex-row">
-//                 {project.prefix}
-//                 <AnimatedNumbers
-//                   includeComma
-//                   animateToNumber={parseInt(project.value)}
-//                   locale="en-US"
-//                   className="text-white text-4xl font-bold"
-//                   configs={(_, index) => {
-//                     return {
-//                       mass: 1,
-//                       friction: 100,
-//                       tensions: 140 * (index + 1),
-//                     };
-//                   }}
-//                 />
-//                 {project.postfix}
-//               </h2>
-//               <p className="text-[#ADB7BE] text-base">{project.metric}</p>
-//               <a href={project.url}>
-//                 <img src={project.image} alt={project.name} className="mt-4 w-32 h-32" />
-//               </a>
-//               <p>
-//                 <a href={project.pr} className="text-blue-500 hover:underline">
-//                   Pull Requests
-//                 </a>
-//               </p>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AchievementsSection;
-"use client";
-import React from "react";
-
-const projectList = [
+const projectsData = [
   {
-    name: "Project 1",
-    url: "https://github.com/example/project1",
-    image: "project1.jpg",
+    id: 2,
+    title: "Fitness Tracking App",
+    description: "Here user can add their own username and add sports activities and target achieved. They can also set the goal for any particular sports and after performing they can see how much they have achieved and target goal. Every Player should have unique username . Die Chart plan are also available so that they can track their entire day. Timer option to track the entire day. And nutrients value for every food is available.",
+    image: "/fit.jpeg",
+    tag: ["All", "Web"],
+    githubUrl: "https://github.com/sriparna-koar/fitness_tracking_app",
+    previewUrl: "https://github.com/sriparna-koar/fitness_tracking_app",
   },
   {
-    name: "Project 2",
-    url: "https://github.com/example/project2",
-    image: "project2.jpg",
+    id: 3,
+    title: "Library Book Management System",
+    description: "It's a library book store project where user can see different types of book names and can store their preferred choice and store in their own folder for future reference if they search by folder name they can see all their books.They can see different varities of books available in the library.",
+    image: "/book.jpeg",
+    tag: ["All", "Web"],
+    githubUrl: "https://github.com/sriparna-koar/Library_management",
+    previewUrl: "https://github.com/sriparna-koar/Library_management",
   },
   {
-    name: "Project 3",
-    url: "https://github.com/example/project3",
-    image: "project3.jpg",
+    id: 4,
+    title: "Vendor Shop Calculator",
+    description: "This a vendor shop calculator where in the calculator there is various options when vendor can calcualte the total amount of customer and shopkeeper can dd the name,location, time, total price and date of the purchase and he can download the bill and send bill to the customer. ",
+    image: "/vendor.jpeg",
+    tag: ["All", "Mobile"],
+    githubUrl: "https://github.com/sriparna-koar/shop_calculator",
+    previewUrl: "https://shop-calculator.vercel.app/",
   },
   {
-    name: "Project 4",
-    url: "https://github.com/example/project4",
-    image: "project4.jpg",
+    id: 5,
+    title: "Car Showroom Project",
+    description: "It''s a NEXT JS nd Mongo Db project where user can add different car, location, color andyear in shop and add it and to see which year which car was added and what model in a car showroom.",
+    image: "/car.jpeg",
+    tag: ["All", "Web"],
+    githubUrl: "https://github.com/sriparna-koar/car_showroom",
+    previewUrl: "https://car-showroom-two.vercel.app/",
+  },
+  {
+    id: 6,
+    title: "File summarizer and text to speech",
+    description: "It's a text to speech project in NEXT JS where user can paste any news of any langiuage and while we click speak we can hear the news and if we upload any files we can see the summarize text what's there in the pdf.",
+    image: "/text.jpeg",
+    tag: ["All", "Web"],
+    githubUrl: "https://github.com/sriparna-koar/textspeech",
+    previewUrl: "https://sriparna-koar.github.io/textspeech",
   },
 ];
 
 const AchievementsSection = () => {
+  const [tag, setTag] = useState("All");
+
+  const handleTagChange = (newTag) => {
+    setTag(newTag);
+  };
+
+  const filteredProjects = projectsData.filter((project) =>
+    project.tag.includes(tag)
+  );
+
+  const cardVariants = {
+    initial: { y: 50, opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  };
+
+  const [expandedImageId, setExpandedImageId] = useState(null);
+
+  const toggleExpand = (id) => {
+    setExpandedImageId(expandedImageId === id ? null : id);
+  };
+
   return (
-    <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-      <h2 className="text-white text-2xl font-bold mb-6">Projects</h2>
-      <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
-        {projectList.map((project, index) => {
-          return (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
-            >
-              <h2 className="text-white text-4xl font-bold flex flex-row">
-                {project.name}
-              </h2>
-              <a href={project.url}>
-                <img src={project.image} alt={project.name} className="mt-4 w-32 h-32" />
-              </a>
-              <p>
-                <a href={project.url} className="text-blue-500 hover:underline">
-                  <svg
-                    // xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 inline-block mb-1"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 5l7 7-7 7"
-                    />
-                  </svg>
-                </a>
-              </p>
-            </div>
-          );
-        })}
+    <section id="projects">
+      <h2 className={styles.aboutTitle}>My Projects</h2>
+      <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
+        <button
+          onClick={() => handleTagChange("All")}
+          className={`${styles.projectButton} ${
+            tag === "All" ? "text-blue-500" : "text-gray-400"
+          }`}
+        >
+   
+        </button>
+        <button
+          onClick={() => handleTagChange("Web")}
+          className={`${styles.projectButton} ${
+            tag === "Web" ? "text-blue-500" : "text-gray-400"
+          }`}
+        >
+  
+        </button>
+        <button
+          onClick={() => handleTagChange("Mobile")}
+          className={`${styles.projectButton} ${
+            tag === "Mobile" ? "text-blue-500" : "text-gray-400"
+          }`}
+        >
+  
+        </button>
       </div>
-    </div>
+      <ul className={`grid md:grid-cols-3 gap-8 md:gap-12 ${styles.projectsContainer}`}>
+        {filteredProjects.map((project) => (
+          <motion.li
+            key={project.id}
+            variants={cardVariants}
+            initial="initial"
+            animate="animate"
+            transition={{ duration: 0.3 }}
+            className={styles.projectCard}
+          >
+            <div
+              className={`${styles.projectImageContainer} ${
+                expandedImageId === project.id ? styles.expanded : ""
+              }`}
+            >
+              <img
+                src={project.image}
+                alt={project.title}
+                className={`${styles.projectImage} ${styles.minimizedImage}`} // Added minimizedImage class
+                onClick={() => toggleExpand(project.id)}
+              />
+            </div>
+            <div className={styles.projectDetails}>
+              <h3 className={styles.projectTitle}>{project.title}</h3>
+              <p className={styles.projectDescription}>
+                {project.description.split('\n').map((line, index) => (
+                  <React.Fragment key={index}>
+                    {line}
+                    <br /> {/* Add <br /> after each line */}
+                  </React.Fragment>
+                ))}
+              </p>
+              <div className={styles.projectLinks}>
+                <a
+                  href={project.githubUrl}
+                  className={styles.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                <a
+                  href={project.previewUrl}
+                  className={styles.projectLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                 Preview 
+                </a>
+              </div>
+            </div>
+          </motion.li>
+        ))}
+      </ul>
+    </section>
   );
 };
 
 export default AchievementsSection;
 
-
-// "use client";
-// import React from "react";
-
-// const projectList = [
-//   {
-//     name: "Project 1",
-//     url: "https://github.com/example/project1",
-//     image: "project1.jpg",
-//   },
-//   {
-//     name: "Project 2",
-//     url: "https://github.com/example/project2",
-//     image: "project2.jpg",
-//   },
-//   {
-//     name: "Project 3",
-//     url: "https://github.com/example/project3",
-//     image: "project3.jpg",
-//   },
-//   {
-//     name: "Project 4",
-//     url: "https://github.com/example/project4",
-//     image: "project4.jpg",
-//   },
-// ];
-
-// const AchievementsSection = () => {
-//   return (
-   
-//     <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-//       <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 flex flex-col sm:flex-row items-center justify-between">
-//         {projectList.map((project, index) => {
-//           return (
-//             <div
-//               key={index}
-//               className="flex flex-col items-center justify-center mx-4 my-4 sm:my-0"
-//             >
-//               <h2 className="text-white text-4xl font-bold flex flex-row">
-//                 {project.name}
-//               </h2>
-//               <a href={project.url}>
-//                 <img src={project.image} alt={project.name} className="mt-4 w-32 h-32" />
-//               </a>
-//               <p>
-//                 <a href={project.url} className="text-blue-500 hover:underline">
-//                   <svg
-//                     // xmlns="http://www.w3.org/2000/svg"
-//                     className="h-6 w-6 inline-block mb-1"
-//                     fill="none"
-//                     viewBox="0 0 24 24"
-//                     stroke="currentColor"
-//                   >
-//                     <path
-//                       strokeLinecap="round"
-//                       strokeLinejoin="round"
-//                       strokeWidth={2}
-//                       d="M9 5l7 7-7 7"
-//                     />
-//                   </svg>
-               
-//                 </a>
-//               </p>
-//             </div>
-//           );
-//         })}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default AchievementsSection;

@@ -35,27 +35,29 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className={`${styles.heroSubTitle} ${styles.textGray}`}>
-            I enjoy building sites & apps. Let&apos;s create something extraordinary. I am self-driven, quick starter 
+          <p className={`${styles.heroSubTitle} ${styles.textGray}`}style={{ color: 'white' ,fontSize: '25px' }}>
+                 I enjoy building sites & apps. Let&apos;s create something extraordinary.I am self-driven,
+                 <br/>  quick starter,passionate programmer with a curious mind who enjoys solving a 
+                 <br/> complex and challenging real-world problems.
           </p>
-          <div>
+          <div className={`${styles.linkButton}`}>
             <Link href="/contact" className={`${styles.linkButton} ${styles.linkButtonPrimary} mr-4`}>
               Hire Me
             </Link>
-            <Link href="/" className={`${styles.linkButton} ${styles.linkButtonSecondary}`}>
+            {/* <Link href="/" className={`${styles.linkButton} ${styles.linkButtonSecondary}`}>
               <span className={`${styles.bgSlate800} rounded-full px-5 py-2`}>
                 Download CV
               </span>
-            </Link>
+            </Link> */}
           </div>
-          <div className="socialMediaIcons">
-            <a href="https://www.linkedin.com" className="socialMediaIcon linkedin">
+          <div className={`${styles.socialMediaIcons}`}>
+            <a href="https://www.linkedin.com/in/sriparna-koar-2a4415289/" className={`${styles.socialMediaIcon}`}>
               <FaLinkedin size={32} color="#0e76a8" />
             </a>
-            <a href="https://www.github.com" className="socialMediaIcon github">
+            <a href="https://github.com/sriparna-koar" className={`${styles.socialMediaIcon}`}>
               <FaGithub size={32} color="#333" />
             </a>
-            <a href="https://www.twitter.com" className="socialMediaIcon twitter">
+            <a href="https://www.twitter.com" className={`${styles.socialMediaIcon}`}>
               <FaTwitter size={32} color="#1da1f2" />
             </a>
           </div>
@@ -71,8 +73,8 @@ const HeroSection = () => {
               src="/hero-image.png"
               alt="hero image"
               className={`${styles.heroImage} absolute transform -translate-y-1/2`}
-              width={350}
-              height={350}
+              width={330}
+              height={330}
             />
           </div>
         </motion.div>

@@ -132,29 +132,37 @@
 
 .linkButton {
   display: inline-block;
-  padding: 1rem 2rem;
-  background-color: #007bff;
+  padding: 1rem 3rem;
+  background-color: #011932;
   color: #fff;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  bottom: auto;
 }
 /* Define the styles for the container */
 .socialMediaIcons {
   display: flex;
-  justify-content: center; /* Center horizontally */
-  margin-top: 1rem;
+
 }
 
-/* Define styles for each social media icon */
 .socialMediaIcon {
-  margin-right: 1rem; /* Add space between icons */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
+  margin-right: 10px;
+  margin: 0 5px;
+  background-color: #fff; /* Change to your desired background color */
+  transition: background-color 0.3s ease;
 }
+
+.socialMediaIcon:hover {
+  background-color: #f0f0f0; /* Change to your desired hover background color */
+}
+
 
 /* Define styles for LinkedIn icon */
 .linkedin::before {
@@ -219,11 +227,21 @@
 
 .heroImageContainer {
   position: absolute;
-  top: 60%; 
-  right: 20%; 
-  transform: translate(0, -50%);
+
+  right: 35%; 
+  transform: translate(0, -40%);
+}
+@media (max-width: 768px) { /* Adjust the max-width value according to your desired breakpoint */
+  .heroImageContainer {
+    top: 88%;
+  }
 }
 
+@media (min-width: 769px) { /* Adjust the min-width value according to your desired breakpoint */
+  .heroImageContainer {
+    top: 50%;
+  }
+}
 .heroImage {
   border-radius: 50%;
   width: 350px;

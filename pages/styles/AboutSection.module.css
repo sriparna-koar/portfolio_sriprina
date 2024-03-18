@@ -9,9 +9,9 @@
   .aboutContent {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+  
     align-items: center;
-    gap: 2rem;
+    
   }
   
   .tabContentList {
@@ -23,8 +23,8 @@
     position: relative;
     padding-left: 20px;
     margin-bottom: 10px;
-    font-size: 1.1rem;
-    color: #fff; /* Bright white color for the list items */
+    font-size: 1.3rem;
+    color: #efefef; /* Bright white color for the list items */
     transition: transform 0.3s ease;
   }
   
@@ -55,16 +55,30 @@
     color: #fff; /* Bright white color for the description */
     max-width: 600px;
     margin-bottom: 2rem;
+    
     opacity: 0; /* Initially hide the description */
     animation: fadeInUp 0.5s ease-out forwards; /* Animation to fade in the description */
   }
-  
+  .activeTab {
+    /* Styles for active tab */
+    font-weight: bold;
+    color: #000; /* Change color as needed */
+  }
   .tabButtons {
     display: flex;
-    justify-content: center;
-    gap: 1rem;
+    font-size: 1.7rem;
+    color:#f89ce7;
+    gap: 2rem;
+    justify-content: space-evenly;
+    font-weight: bold;
+    margin-right: 20px;
     opacity: 0; /* Initially hide the tab buttons */
     animation: fadeInUp 0.5s ease-out 0.3s forwards; /* Animation to fade in the tab buttons */
+  }
+  .tabLine {
+    width: 100%; /* Adjust the width as needed */
+    height: 2px; /* Adjust the height as needed */
+    background-color: #000; /* Adjust the color as needed */
   }
   
   .tabButtons .tabButton {
