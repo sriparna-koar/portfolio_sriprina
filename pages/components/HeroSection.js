@@ -41,9 +41,9 @@ const HeroSection = () => {
                  <br/> complex and challenging real-world problems.
           </p>
           <div className={`${styles.linkButton}`}>
-            <Link href="/contact" className={`${styles.linkButton} ${styles.linkButtonPrimary} mr-4`}>
-      
-            </Link>
+      //       <Link href="/contact" className={`${styles.linkButton} ${styles.linkButtonPrimary} mr-4`}>
+      // Hire Me
+      //       </Link>
             {/* <Link href="/" className={`${styles.linkButton} ${styles.linkButtonSecondary}`}>
               <span className={`${styles.bgSlate800} rounded-full px-5 py-2`}>
                 Download CV
