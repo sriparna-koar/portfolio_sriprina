@@ -70,7 +70,7 @@ const HeroSection = () => {
         >
           <div className={`${styles.bgSlate800} ${styles.heroImageContainer} rounded-full`}>
             <Image
-              src="/hero-image.png"
+              // src="/hero-image.png"
               alt="hero image"
               className={`${styles.heroImage} absolute transform -translate-y-1/2`}
               width={330}
